@@ -1,0 +1,39 @@
+class Solution {
+public:
+    string firstPalindrome(vector<string>& words) {
+        string ans;
+        int l=0;
+        int r=0;
+        for(int i=0;i<words.size();i++){
+            if(words[i].size()==1){
+                return words[i];
+            }
+            if(words[i].size()==2){
+                if(words[i][0]==words[i][1]){
+                    return words[i];
+                }else{
+                    if (i<words.size()-1) {i++;}
+                    else{
+                        break;
+                    }
+                }
+            }
+            l=0;
+            r=words[i].size()-1;
+            while(l<r){
+                if(words[i][l]==words[i][r]){
+                    l++;
+                    r--;
+                }else{
+                    break;
+                }
+            }
+            cout<<words[i]<<" "<<r-l<<endl;
+            if(r-l<1){
+                return words[i];
+            }
+        }
+        return ans;
+    }
+};
+//26.38% runtime as of Dec 23rd
