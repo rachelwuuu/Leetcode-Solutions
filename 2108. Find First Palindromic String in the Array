@@ -28,7 +28,6 @@ public:
                     break;
                 }
             }
-            cout<<words[i]<<" "<<r-l<<endl;
             if(r-l<1){
                 return words[i];
             }
@@ -36,4 +35,4 @@ public:
         return ans;
     }
 };
-//26.38% runtime as of Dec 23rd
+//91.44% runtime as of Dec 23rd
