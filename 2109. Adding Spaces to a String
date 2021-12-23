@@ -1,0 +1,24 @@
+class Solution {
+public:
+    string addSpaces(string s, vector<int>& spaces) {
+        string ans;
+        int j=spaces[0];
+        int k=0;
+        for(int i=0;i<s.size();i++){
+            if(k<spaces.size()){
+                if(i!=spaces[k]){
+                    ans.push_back(s[i]);
+                }else{
+                    ans.push_back(' ');
+                    ans.push_back(s[i]);
+                    k++;
+                }
+            }else{
+                ans.push_back(s[i]);
+            }
+            
+        }
+        return ans;
+    }
+};
+//88.35% Runtime as of Dec 23rd
